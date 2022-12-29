@@ -22,5 +22,5 @@
       "dest": "backend/server.js"
     }
   ],
-  "postBuild": "cd frontend && npm install && npm run build"
+  "postBuild": "npm install --prefix frontend && npm run build --prefix frontend"
 }
