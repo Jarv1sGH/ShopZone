@@ -5,23 +5,9 @@
     {
       "src": "backend/server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "command": "npm run build",
-        "output": "frontend",
-        "env": {
-          "NPM_CONFIG_PRODUCTION": "false"
-        }
-      }
     }
   ],
   "routes": [
-    {
-      "handle": "filesystem"
-    },
     {
       "src": "/(.*)",
       "dest": "backend/server.js"
