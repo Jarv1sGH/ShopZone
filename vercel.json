@@ -10,6 +10,8 @@
       "src": "frontend/package.json",
       "use": "@vercel/node",
       "config": {
+        "command": "npm run build",
+        "output": "frontend",
         "env": {
           "NPM_CONFIG_PRODUCTION": "false"
         }
@@ -18,9 +20,11 @@
   ],
   "routes": [
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "backend/server.js"
     }
-  ],
-  "postBuild": "npm install --prefix frontend && npm run build --prefix frontend"
+  ]
 }
