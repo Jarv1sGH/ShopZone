@@ -1,3 +1,7 @@
+
+//This is my take at the mern project tutorial made by 6 Pack Programmer on youtube ( https://youtu.be/AN3t-OmdyKA ) 
+
+
 # Install Dependencies
 
 **For Backend** - `npm i`
@@ -22,3 +26,5 @@ SMPT_PORT=
 CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
+
+
