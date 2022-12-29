@@ -1,0 +1,90 @@
+
+.container>h2 {
+    margin: 7rem 1px;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-family: Roboto;
+    border-bottom: 1px solid black;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    max-width: 100%;
+    margin:  auto;
+}
+
+.prodCard {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    /* background: radial-gradient(circle, rgba(37, 44, 82, 0.193) 0%, rgba(50, 3, 12, 0.284) 100%); */
+    color: rgb(42, 39, 39);
+    margin: 2vmax;
+    width: 14vmax;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    cursor: pointer;
+    padding-bottom: 0.5vmax;
+    border: 1px solid rgba(48, 48, 48, 0.116);
+    border-radius: 2px;
+}
+
+.ratingDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.1vmax;
+
+}
+
+.prodCard>img {
+    border: 1px solid rgba(27, 26, 26, 0.116);
+    margin: auto;
+    border-radius: 2px;
+    min-height: 20px;
+    width: 13.9vmax;
+}
+
+.prodCard>h4 {
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+}
+
+#reviews {
+    margin: 0.5vmax;
+}
+
+#price {
+    margin: 0.5vmax 0.5vmax;
+    color: rgb(215, 33, 33);
+}
+
+.prodCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+@media screen and (max-width:600px) {
+
+    .prodCard>h4 {
+        font-size: 1.7vmax;
+    }
+
+    .prodCard>div {
+        margin: 0vmax;
+        display: block;
+    }
+
+    #reviews {
+        font-size: 1.5vmax;
+    }
+
+    #price {
+        margin: 0 0.5vmax;
+    }
+    .container>h2 {
+        font-size: 1.5rem;
+        margin: 8.5rem 1px;
+    }
+}

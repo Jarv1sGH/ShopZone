@@ -1,0 +1,166 @@
+.dashboard {
+  width: 100vw;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  /* position: absolute; */
+}
+
+.dashboardContainer {
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+  background-color: rgb(255, 255, 255);
+  padding: 3rem 0;
+}
+
+.dashboardContainer>h1 {
+  font: 300 2rem "Roboto";
+  text-align: center;
+  width: 50%;
+  padding: 1.5rem;
+  margin: 2rem auto;
+}
+
+.dashboardSummary {
+  margin: 2rem 0;
+}
+
+
+.dashboardSummary>div>p {
+  background: radial-gradient(#60efbc, #58d5c9);
+  color: white;
+  font: 300 1.3rem "Roboto";
+  text-align: center;
+  padding: 0.8rem;
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.dashboardSummaryBox2>a {
+  color: rgb(0, 0, 0);
+  font: 300 2rem "Roboto";
+  text-align: center;
+  background-color: rgb(255, 233, 174);
+  text-decoration: none;
+  padding: 1.5rem;
+  width: 10vmax;
+  height: 10vmax;
+  margin: 2rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboardSummaryBox2 {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.col-sm-6 {
+  width: 40% !important;
+}
+
+.cardDiv {
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.adminCardBody {
+  margin: auto;
+}
+
+.adminCard {
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgba(59, 167, 184, 0.527); */
+  text-decoration: none;
+  text-align: center;
+  margin: 1vmax;
+  height: 25rem;
+  width: 15vmax;
+  transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+  cursor: pointer;
+
+}
+
+.adminCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.col-sm-6>a>div>div>h1 {
+  color: rgba(0, 0, 0, 0.742);
+}
+
+.col-sm-6>a>div>div>i {
+  color: rgba(0, 0, 0, 0.742);
+  font-size: 4rem;
+}
+
+.col-sm-6>a {
+  text-decoration: none;
+}
+
+.col-sm-6>a>div>div>h4 {
+  color: rgb(12, 159, 56);
+}
+
+.col-sm-6>a>div>h6 {
+  color: rgba(0, 0, 0, 0.742);
+}
+
+.adminProdCard {
+  background: radial-gradient(#1fe4f5, #3fbafe);
+  ;
+}
+
+.adminOrdersCard {
+  background: radial-gradient(#fbc1cc, #fa99b2);
+}
+
+.adminUsersCard {
+  background: radial-gradient(#76b2fe, #b69efe);
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardContainer {
+    border-left: none;
+  }
+
+  .dashboardSummary>div>p {
+    margin: 0;
+  }
+
+  .dashboardSummaryBox2>a {
+    padding: 0.5rem;
+    margin: 1rem;
+    font: 300 0.9rem "Roboto";
+  }
+
+  .adminCard {
+    margin: 1vmax;
+    height: 15rem;
+    width: 13vmax;
+
+  }
+
+  .col-sm-6>a>div>div>h1 {
+    font-size: 1rem;
+  }
+
+  .col-sm-6>a>div>div>h4 {
+    font-size: 0.9rem;
+  }
+  .dashboardContainer>h1 {
+    margin-top: -5rem;
+  }
+}

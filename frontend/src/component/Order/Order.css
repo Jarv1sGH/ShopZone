@@ -1,0 +1,205 @@
+.myOrdersPage {
+  width: 100vw;
+  max-width: 100%;
+  padding: 0 7vmax;
+  box-sizing: border-box;
+  background-color: rgb(235, 235, 235);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 68px;
+}
+
+#myOrdersHeading {
+  text-align: center;
+  font: 400 1.2vmax "Roboto";
+  padding: 0.5vmax;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  transition: all 0.5s;
+  background-color: rgb(44, 44, 44);
+}
+
+.myOrdersTable {
+  background-color: white;
+}
+
+.myOrdersTable div {
+  font: 300 1vmax "Roboto";
+  color: rgba(0, 0, 0, 0.678);
+  border: none;
+}
+
+.myOrdersTable a {
+  color: rgba(0, 0, 0, 0.527);
+  transition: all 0.5s;
+}
+
+.myOrdersTable a:hover {
+  color: tomato;
+}
+
+.MuiDataGrid-columnHeader {
+  background-color: tomato;
+  padding: 1vmax !important;
+}
+
+.MuiDataGrid-columnHeader div {
+  color: rgb(255, 255, 255);
+  font: 500 1.1vmax "Roboto" !important;
+}
+
+.MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+
+
+/* OrderDetails.js css */
+.orderDetailsPage {
+  background-color: white;
+}
+
+.orderDetailsContainer>h1 {
+  font: 300 3vmax "Roboto";
+  margin-bottom: 20px;
+  color: rgb(12, 159, 56);
+}
+
+.orderDetailsContainer {
+  padding: 5vmax;
+  padding-bottom: 0%;
+}
+
+.orderDetailsContainer>p {
+  font: 400 1.8vmax "Roboto";
+}
+
+.orderDetailsContainerBox,
+.orderDetailsCartItemsContainer {
+  margin: 2vmax;
+}
+
+.orderDetailsContainerBox>div {
+  display: flex;
+  margin: 1vmax 0;
+}
+
+.orderDetailsContainerBox>div>p {
+  font: 400 1vmax "Roboto";
+  color: black;
+}
+
+.orderDetailsContainerBox>div>span {
+  margin: 0 1vmax;
+  font: 100 1vmax "Roboto";
+  color: black;
+}
+
+.orderDetailsCartItems>p {
+  font: 400 1.8vmax "Roboto";
+}
+
+.orderDetailsCartItems {
+  padding: 2vmax 5vmax;
+  border-top: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+.orderDetailsCartItemsContainer>div {
+  display: flex;
+  font: 400 1vmax "Roboto";
+  align-items: center;
+  margin: 2vmax 0;
+}
+
+.orderDetailsCartItemsContainer>div>img {
+  width: 3vmax;
+}
+
+.orderDetailsCartItemsContainer>div>a {
+  color: black;
+  margin: 0 2vmax;
+  width: 60%;
+  text-decoration: none;
+}
+
+.orderDetailsCartItemsContainer>div>span {
+  font: 100 1vmax "Roboto";
+  color: #5e5e5e;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .myOrdersPage {
+    margin-top: 116px;
+    padding: 0;
+    height: 93vh;
+  }
+
+  #myOrdersHeading {
+    font: 400 2.2vmax "Roboto";
+    padding: 4vw;
+  }
+
+  .myOrdersTable div {
+    font: 300 4vw "Roboto";
+  }
+
+  .MuiDataGrid-columnHeader {
+    padding: 20px !important;
+  }
+
+  .MuiDataGrid-columnHeader div {
+    font: 500 5vw "Roboto" !important;
+  }
+
+  /* OrderDetails.js media queries */
+
+  .orderDetailsContainer {
+    margin-top: 5rem;
+  }
+  .orderDetailsContainer>p {
+    font: 400 6vw "Roboto";
+  }
+
+  .orderDetailsContainerBox>div {
+    margin: 6vw 0;
+  }
+
+  .orderDetailsContainerBox>div>p {
+    font: 400 4vw "Roboto";
+  }
+
+  .orderDetailsContainerBox>div>span {
+    font: 100 4vw "Roboto";
+  }
+
+  .orderDetailsCartItems>p {
+    font: 400 6vw "Roboto";
+  }
+
+  .orderDetailsCartItemsContainer>div {
+    font: 400 4vw "Roboto";
+    margin: 4vw 0;
+  }
+
+  .orderDetailsCartItemsContainer>div>img {
+    width: 10vw;
+  }
+
+  .orderDetailsCartItemsContainer>div>a {
+    margin: 2vw;
+    width: 30%;
+  }
+
+  .orderDetailsCartItemsContainer>div>span {
+    font: 100 4vw "Roboto";
+  }
+}

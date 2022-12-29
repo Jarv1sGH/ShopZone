@@ -1,0 +1,64 @@
+.profileCard {
+  height: 40rem !important;
+  position: relative;
+  /* background: radial-gradient(#76b2fe, #b69efe); */
+}
+
+#userHeading {
+  margin-top: 4.5vmax;
+}
+
+.details {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.editContainer {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 80%;
+}
+
+.editContainer>a {
+  border: none;
+  background-color: #212529;
+  font: 400 1vmax "Roboto";
+  color: white;
+  text-decoration: none;
+  padding: 0.5vmax;
+  text-align: center;
+  transition: all 0.5s;
+  margin: 1vmax 0;
+
+}
+
+.editContainer>a:hover {
+  background-color: rgba(31, 31, 31, 0.742);
+}
+
+@media screen and (max-width: 900px) {
+  .editContainer {
+    margin-top: 12vmax;
+  }
+
+  .editContainer>a {
+    font: 400 1.8vmax "Roboto";
+    padding: 1vmax;
+    margin: 2vmax 0;
+  }
+
+  #userHeading {
+    position: sticky;
+    font-size: larger;
+    margin-top: 16vmax;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .editContainer {
+    margin-top: 7vmax;
+  }
+}

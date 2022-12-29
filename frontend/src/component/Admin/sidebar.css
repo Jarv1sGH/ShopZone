@@ -1,0 +1,43 @@
+.sidebar {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+}
+.sidebar  h1{
+  font-size: 2.3rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: rgb(18, 17, 17);
+  font: 200 1rem "Roboto";
+  padding: 2rem;
+  transition: all 0.5s;
+}
+
+.sidebar a:hover {
+  color: rgb(12, 159, 56);
+  transform: scale(1.1);
+}
+
+.sidebar a>P {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a>p>i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.MuiTypography-root {
+  background-color: #fff !important;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    margin-top: 2.5rem;
+  }
+
+}
