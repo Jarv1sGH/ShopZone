@@ -4,11 +4,16 @@
   "builds": [
     {
       "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
       "use": "@vercel/node",
-      "env": {
-        "NPM_CONFIG_PRODUCTION": "false"
-      },
-      "command": "npm install --prefix frontend && npm run build --prefix frontend"
+      "config": {
+        "env": {
+          "NPM_CONFIG_PRODUCTION": "false"
+        }
+      }
     }
   ],
   "routes": [
@@ -16,5 +21,6 @@
       "src": "/(.*)",
       "dest": "backend/server.js"
     }
-  ]
+  ],
+  "postBuild": "cd frontend && npm install && npm run build"
 }
