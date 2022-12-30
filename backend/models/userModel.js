@@ -48,7 +48,7 @@ userSchema.pre("save", async function (next) {
 // JSON WEB TOKEN
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn:"7d"
+    expiresIn:"7d" //Hardcoded the value because it wasn't working with the  env variable in production (works fine in dev) for some reason and I cannot figure out why.
   });
 };
 
