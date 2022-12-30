@@ -4,10 +4,7 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node",
-      "config": {
-  
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
