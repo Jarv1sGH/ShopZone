@@ -6,9 +6,7 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "env": {
-          "NPM_CONFIG_PRODUCTION": "false"
-        }
+  
       }
     }
   ],
