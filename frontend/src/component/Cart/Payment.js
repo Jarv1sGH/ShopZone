@@ -29,6 +29,7 @@ const Payment = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
+  const { buyNow, buyNowItem } = useSelector((state) => state.buyNow);
 
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100), // As stripe takes the inr amount in "paise" not rupee.
@@ -36,7 +37,8 @@ const Payment = () => {
 
   const order = {
     shippingInfo,
-    orderItems: cartItems,
+    // buyNow becomes true when the user clicks the Buy Now button in the product details component 
+    orderItems: buyNow === true ? buyNowItem : cartItems,
     itemsPrice: orderInfo.subtotal,
     taxes: orderInfo.tax,
     deliveryCharges: orderInfo.shippingCharges,

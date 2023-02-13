@@ -20,6 +20,7 @@ const Shipping = () => {
   const [pincode, setPincode] = useState(shippingInfo.pincode);
   const [mobileNo, setMobileNo] = useState(shippingInfo.mobileNo);
 
+
   const shippingSubmit = (e) => {
     e.preventDefault();
     if (mobileNo.length < 10 || mobileNo.length > 10) {

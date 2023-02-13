@@ -41,10 +41,10 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 function App() {
   const { isAuthenticated, loading, user } = useSelector((state) => state.user);
-  const { cartItems } = useSelector((state) => state.cart);
-  const { paymentVar } = useSelector((state) => state.cart);
+  const { emptyOrderCheck } = useSelector((state) => state.buyNow);
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
@@ -90,9 +90,20 @@ function App() {
             <Route exact path="/orders" element={<MyOrders />} />
             <Route
               exact
+              path="/shipping"
+              element={
+                emptyOrderCheck === true ? (
+                  <Shipping />
+                ) : (
+                  <Navigate replace to={"/"} />
+                )
+              }
+            />
+            <Route
+              exact
               path="/order/confirm"
               element={
-                paymentVar === true ? (
+                emptyOrderCheck === true ? (
                   <ConfirmOrder />
                 ) : (
                   <Navigate replace to={"/cart"} />
@@ -100,28 +111,13 @@ function App() {
               }
             />
 
-            <Route
-              exact
-              path="/shipping"
-              element={
-                cartItems.length === 0 ? (
-               
-                  <Navigate replace to={"/cart"} />
-                ) : (
-                  <Shipping />
-                  
-                )
-              }
-            />
-
             <Route exact path="/order/:id" element={<OrderDetails />} />
-
             {stripeApiKey && (
               <Route
                 exact
                 path="/process/payment"
                 element={
-                  paymentVar === true ? (
+                  emptyOrderCheck === true ? (
                     <Elements stripe={loadStripe(stripeApiKey)}>
                       <Payment />
                     </Elements>

@@ -2,7 +2,8 @@ import React from "react";
 import "./Cart.css";
 import { Typography } from "@material-ui/core";
 import { Link, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateBuyNow } from "../../actions/buyNowAction";
 const OrderSuccess = () => {
   const { loading , order} = useSelector((state) => state.newOrder);
   if (!loading && !order) {

@@ -113,16 +113,19 @@ export const productDetailsReducer = (state = { product: {} }, action) => {
     case PRODUCT_DETAILS_REQUEST:
       return {
         loading: true,
+        buyNow: false,
         ...state,
       };
     case PRODUCT_DETAILS_SUCCESS:
       return {
         loading: false,
+        buyNow: false,
         product: action.payload,
       };
     case PRODUCT_DETAILS_FAIL:
       return {
         loading: false,
+        buyNow: false,
         error: action.payload,
       };
     case CLEAR_ERRORS:
@@ -276,3 +279,4 @@ export const reviewReducer = (state = {}, action) => {
       return state;
   }
 };
+

@@ -11,12 +11,20 @@ import Loader from "../layout/Loader/Loader";
 const ConfirmOrder = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user, loading } = useSelector((state) => state.user);
+  const { buyNow, buyNowItem } = useSelector((state) => state.buyNow);
   const navigate = useNavigate();
 
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.quantity * item.price,
-    0
-  );
+  let subtotal;
+  if (buyNow === true) {
+    subtotal = buyNowItem?.price * buyNowItem?.quantity
+  }
+  else {
+    subtotal = cartItems.reduce(
+      (acc, item) => acc + item.quantity * item.price,
+      0
+    );
+  }
+
 
   const shippingCharges = subtotal > 1000 ? 0 : 200;
 
@@ -24,7 +32,7 @@ const ConfirmOrder = () => {
 
   const totalPrice = subtotal + tax + shippingCharges;
 
-  const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
+  const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pincode}, ${shippingInfo.country}`;
 
   const proceedToPayment = () => {
     const data = {
@@ -64,7 +72,7 @@ const ConfirmOrder = () => {
                   </div>
                   <div>
                     <p>Phone:</p>
-                    <span>{shippingInfo.phoneNo}</span>
+                    <span>{shippingInfo.mobileNo}</span>
                   </div>
                   <div>
                     <p>Address:</p>
@@ -74,21 +82,37 @@ const ConfirmOrder = () => {
               </div>
               <div className="confirmCartItems">
                 <Typography> Items:</Typography>
-                <div className="confirmCartItemsContainer">
-                  {cartItems &&
-                    cartItems.map((item) => (
-                      <div key={item.product}>
-                        <img src={item.image} alt="Product" />
-                        <Link to={`/product/${item.product}`}>
-                          {item.name}
-                        </Link>{" "}
+                {
+                  buyNow === true ?
+                    <div className="confirmCartItemsContainer">
+                      <div>
+                        <img src={buyNowItem?.image} alt="Product" />
+                        <Link to={`/product/${buyNowItem?.product}`}>
+                          {buyNowItem?.name}
+                        </Link>
                         <span>
-                          {item.quantity} X ₹{item.price} ={" "}
-                          <b>₹{item.price * item.quantity}</b>
+                          {buyNowItem?.quantity} X ₹{buyNowItem?.price} ={" "}
+                          <b>₹{buyNowItem?.price * buyNowItem?.quantity}</b>
                         </span>
                       </div>
-                    ))}
-                </div>
+                    </div>
+                    :
+                    <div className="confirmCartItemsContainer">
+                      {cartItems &&
+                        cartItems.map((item) => (
+                          <div key={item.product}>
+                            <img src={item.image} alt="Product" />
+                            <Link to={`/product/${item.product}`}>
+                              {item.name}
+                            </Link>
+                            <span>
+                              {item.quantity} X ₹{item.price} ={" "}
+                              <b>₹{item.price * item.quantity}</b>
+                            </span>
+                          </div>
+                        ))}
+                    </div>
+                }
               </div>
             </div>
             {/*  */}

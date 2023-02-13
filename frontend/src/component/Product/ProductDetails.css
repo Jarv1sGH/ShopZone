@@ -79,7 +79,7 @@
   font: 400 0.8vmax;
 }
 
-.price2>button:last-child {
+/* .buy-nowBtn{
   border: none;
   cursor: pointer;
   color: white;
@@ -89,6 +89,20 @@
   border-radius: 8px;
   padding: 0.5vmax 2vmax;
   margin: 1vmax;
+  outline: none;
+} */
+
+
+.price2>div:last-child>button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+  background-color: rgb(12, 159, 56);
+  font: 500 0.7vmax "Roboto";
+  border-radius: 8px;
+  padding: 0.5vmax 2vmax;
+  margin: 0.5vmax;
   outline: none;
 }
 
@@ -106,7 +120,7 @@
   margin: auto !important;
 }
 
-.price2>button:last-child:hover {
+.price2>div:last-child>button:hover {
   background-color: rgb(22, 118, 148);
   ;
 }
@@ -248,11 +262,16 @@
     font: 400 1.8vmax "Roboto";
   }
 
-  .price2>button:last-child {
+  .price2>div:last-child {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .price2>div:last-child>button {
     font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
-    margin: 3vmax 0;
+    margin: 2vmax 0.3vmax;
   }
 
   .price>p {
@@ -283,11 +302,13 @@
   .reviewCardComment {
     font: 300 5vw;
   }
+
   .CarouselImage {
     position: static;
     min-width: 40vmax !important;
   }
+
   .productdetails>div {
-    margin-top: 5.5rem;  
+    margin-top: 5.5rem;
   }
 }

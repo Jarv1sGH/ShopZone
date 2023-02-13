@@ -188,10 +188,12 @@
 .MuiStepConnector-completed {
   background-color: rgb(10, 45, 88);
 }
-.checkoutIcons{
+
+.checkoutIcons {
   font-size: 1.5rem;
 }
-.checkoutIcon2{
+
+.checkoutIcon2 {
   font-size: 1.75rem;
 }
 
@@ -323,6 +325,7 @@
   .orderSuccess {
     margin-top: 20vmax;
   }
+
   .orderSuccess>a {
     padding: 3vw 6vw;
     font: 400 4vw "Roboto";
@@ -339,6 +342,6 @@
   }
 
   .MuiStepper-root {
-    margin-top: 12vmax;
+    margin-top: 15vmax;
   }
 }

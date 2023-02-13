@@ -7,6 +7,7 @@ import { Typography } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
+import { updateBuyNow } from "../../actions/buyNowAction";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const Cart = () => {
   };
 
   const checkoutHandler = () => {
+    dispatch(updateBuyNow(false));
     navigate("/Login?redirect=/shipping");
   };
 
@@ -75,14 +77,12 @@ const Cart = () => {
                           item.quantity,
                           item.stock
                         )
-                      }
-                    >
+                      } >
                       +
                     </button>
                   </div>
-                  <p className="cartSubtotal">{`₹${
-                    item.price * item.quantity
-                  }`}</p>
+                  <p className="cartSubtotal">{`₹${item.price * item.quantity
+                    }`}</p>
                 </div>
               ))}
 

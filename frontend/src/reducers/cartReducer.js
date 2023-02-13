@@ -21,12 +21,13 @@ export const cartReducer = (
           ...state,
           cartItems: state.cartItems.map((i) =>
             i.product === isItemExist.product ? item : i
-          ),
+          )
         };
       } else {
         return {
           ...state,
           cartItems: [...state.cartItems, item],
+          emptyProductCheck: true,
         };
       }
 
@@ -40,10 +41,12 @@ export const cartReducer = (
       return {
         ...state,
         shippingInfo: action.payload,
-        paymentVar:true,
+        paymentVar: true,
       };
 
     default:
       return state;
   }
 };
+
+

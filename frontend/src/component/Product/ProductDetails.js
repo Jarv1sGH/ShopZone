@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import {
   clearErrors,
   getProductDetails,
@@ -12,7 +12,7 @@ import Reviews from "./Reviews.js";
 import Loader from "../layout/Loader/Loader";
 import Metadata from "../layout/Metadata";
 import { useAlert } from "react-alert";
-import { addItemsToCart } from "../../actions/cartActions";
+import { addItemsToCart  } from "../../actions/cartActions";
 import {
   Dialog,
   DialogActions,
@@ -22,14 +22,21 @@ import {
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import { updateBuyNow , buyNowItem } from "../../actions/buyNowAction";
 
 const ProductDetails = () => {
+
   const dispatch = useDispatch();
   const alert = useAlert();
   const { id } = useParams();
+  const navigate = useNavigate();
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+
+  // const {buyNow}  = useSelector(
+  //   (state) => state.buyNow
+  // );
 
   const { success, error: reviewError } = useSelector(
     (state) => state.newReview
@@ -48,6 +55,7 @@ const ProductDetails = () => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
+
   const increaseQuantity = () => {
     if (product.Stock <= quantity) return;
     const qty = quantity + 1;
@@ -63,6 +71,12 @@ const ProductDetails = () => {
   const addToCartHandler = () => {
     dispatch(addItemsToCart(id, quantity));
     alert.success("Item Added To Cart");
+  };
+
+  const buyNowHandler = () => {
+    dispatch(updateBuyNow(true));
+    dispatch(buyNowItem(id,quantity));
+    navigate("/Login?redirect=/shipping");
   };
 
   const submitReviewToggle = () => {
@@ -138,12 +152,18 @@ const ProductDetails = () => {
                     <input readOnly type="number" value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div>
+                 <div>
+                 <button className="buy-nowBtn"
+                    disabled={product.Stock < 1 ? true : false}
+                    onClick={buyNowHandler} >
+                    Buy Now
+                  </button>
                   <button
                     disabled={product.Stock < 1 ? true : false}
-                    onClick={addToCartHandler}
-                  >
+                    onClick={addToCartHandler} >
                     Add to Cart
                   </button>
+                 </div>
                 </div>
 
                 <p>

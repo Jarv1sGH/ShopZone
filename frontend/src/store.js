@@ -10,6 +10,7 @@ import {
   productReducer,
   reviewReducer,
 } from "./reducers/productReducer";
+
 import {
   profileReducer,
   userReducer,
@@ -20,6 +21,7 @@ import {
 
 import { cartReducer } from "./reducers/cartReducer";
 
+import {  buyNowReducer } from "./reducers/buyNowReducer";
 import {
   allOrdersReducer,
   myOrdersReducer,
@@ -47,6 +49,7 @@ const reducer = combineReducers({
   product: productReducer,
   productReviews: productReviewsReducer,
   review: reviewReducer,
+  buyNow: buyNowReducer,
 });
 let initialState = {
   cart: {
