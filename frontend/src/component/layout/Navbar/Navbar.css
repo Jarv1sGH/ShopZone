@@ -125,7 +125,7 @@ img, video {
     padding-top: 0.5rem;
 }
 
-@media only screen and (min-width: 62rem) {
+@media only screen and (min-width: 900px) {
     .navbar {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         width: 100%;
@@ -184,7 +184,7 @@ img, video {
     margin-top: 1px;
     background: transparent;
 }
-@media only screen and (min-width: 62rem) {
+@media only screen and (min-width: 900px) {
     .search {
         justify-self: center;
         grid-column: initial;
@@ -230,7 +230,7 @@ img, video {
     outline: none;
     color: rgb(12, 159, 56);
 }
-@media only screen and (min-width: 36rem) {
+@media only screen and (min-width: 600px) {
     .menu {
         position: relative;
         justify-self: end;
@@ -272,7 +272,7 @@ img, video {
     transform: rotate(0deg);
     transition: 0.35s ease;
 }
-@media only screen and (min-width: 36rem) {
+@media only screen and (min-width: 600px) {
     .burger {
         display: none;
         visibility: hidden;

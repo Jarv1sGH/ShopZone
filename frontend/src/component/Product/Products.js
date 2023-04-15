@@ -55,7 +55,7 @@ const Products = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // added so that it scrolls to the top
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, price, alert, error, category, ratings]);
   let count = filteredProductsCount;
@@ -67,77 +67,87 @@ const Products = () => {
       ) : (
         <>
           <Metadata title={"ShopZone - Products"} />
-          <div className=" container">
-            <h2> All Products</h2>
-          </div>
 
-        {  filteredProductsCount === 0 ? <NoProduct/> :
-          <div className="productsPage">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div>}
-          <div className="filterBox">
-            <Typography>Categories</Typography>
-            <ul className="categoryBox">
-              {categories.map((category) => (
-                <li
-                  className="category-link"
-                  key={category}
-                  onClick={() => setCategory(category)}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
+          <div className="productsPageContainer">
+            <div className="filterBox">
+              <Typography>Categories</Typography>
+              <ul className="categoryBox">
+                {categories.map((category) => (
+                  <li
+                    className="category-link"
+                    key={category}
+                    onClick={() => setCategory(category)}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
 
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+              <div className="sliders">
+                <fieldset>
+                  <Typography>Ratings Above</Typography>
 
-              <Slider
-                value={ratings}
-                onChange={(e, newRating) => {
-                  setRatings(newRating);
-                }}
-                marks={true}
-                valueLabelDisplay="auto"
-                aria-labelledby="continous-slider"
-                color="secondary"
-                min={0}
-                max={5}
-              />
-            </fieldset>
+                  <Slider
+                    value={ratings}
+                    onChange={(e, newRating) => {
+                      setRatings(newRating);
+                    }}
+                    marks={true}
+                    valueLabelDisplay="auto"
+                    aria-labelledby="continous-slider"
+                    color="secondary"
+                    min={0}
+                    max={5}
+                  />
+                </fieldset>
 
-            <Typography>Price</Typography>
-            <Slider
-              value={price}
-              onChange={priceHandler}
-              valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
-              color="secondary"
-              min={0}
-              max={250000}
-            />
-          </div>
-          {resultPerPage < count && (
-            <div className="paginationBox">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText=">"
-                prevPageText="<"
-                firstPageText="First"
-                lastPageText="Last"
-                itemClass="page-item"
-                linkClass="page-link"
-                activeClass="pageItemActive"
-                activeLinkClass="pageLinkActive"
-              />
+                <Typography>Price</Typography>
+                <Slider
+                  value={price}
+                  onChange={priceHandler}
+                  valueLabelDisplay="auto"
+                  aria-labelledby="range-slider"
+                  color="secondary"
+                  min={0}
+                  max={250000}
+                />
+              </div>
             </div>
-          )}
+
+            <div className="productsContainer">
+              <div className="productsHeading">
+                <h2>All Products</h2>
+              </div>
+              {filteredProductsCount === 0 ? (
+                <NoProduct />
+              ) : (
+                <div className="products">
+                  {products &&
+                    products.map((product) => (
+                      <ProductCard key={product._id} product={product} />
+                    ))}
+                </div>
+              )}
+              {resultPerPage < count && (
+                <div className="paginationBox">
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={resultPerPage}
+                    totalItemsCount={productsCount}
+                    onChange={setCurrentPageNo}
+                    nextPageText=">"
+                    prevPageText="<"
+                    firstPageText="First"
+                    lastPageText="Last"
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    activeClass="pageItemActive"
+                    activeLinkClass="pageLinkActive"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
         </>
       )}
     </>

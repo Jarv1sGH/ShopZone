@@ -79,19 +79,6 @@
   font: 400 0.8vmax;
 }
 
-/* .buy-nowBtn{
-  border: none;
-  cursor: pointer;
-  color: white;
-  transition: all 0.5s;
-  background-color: rgb(12, 159, 56);
-  font: 500 0.7vmax "Roboto";
-  border-radius: 8px;
-  padding: 0.5vmax 2vmax;
-  margin: 1vmax;
-  outline: none;
-} */
-
 
 .price2>div:last-child>button {
   border: none;
