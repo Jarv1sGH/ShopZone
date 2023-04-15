@@ -18,6 +18,7 @@
   border-radius: 2px;
   padding: 2px 0 8px;
   border-bottom: 2px solid rgb(159, 27, 51);
+  margin-top: 10px;
 }
 .featuredProducts {
   display: flex;
@@ -152,7 +153,7 @@
 
 @media screen and (max-width: 900px) {
   .homeContainer {
-    margin: 7rem 0;
+    margin: 7rem 0 0 0;
   }
   .homeContainer > div > h3 {
     text-align: center;
@@ -182,6 +183,6 @@
 }
 @media screen and (max-width: 365px) {
   .homeContainer {
-    margin: 9rem 0;
+    margin: 9rem 0 0 0;
   }
 }
