@@ -60,6 +60,7 @@
 /* OrderDetails.js css */
 .orderDetailsPage {
   background-color: white;
+  padding-bottom: 10rem;
 }
 
 .orderDetailsContainer>h1 {

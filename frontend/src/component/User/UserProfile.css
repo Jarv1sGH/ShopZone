@@ -1,7 +1,11 @@
 .profileCard {
-  height: 40rem !important;
   position: relative;
-  /* background: radial-gradient(#76b2fe, #b69efe); */
+  
+}
+.profileContainer{
+  margin: auto;
+  width: 70%;
+  padding-bottom: 10rem;
 }
 
 #userHeading {

@@ -15,9 +15,6 @@ const UserProfile = () => {
     if (isAuntheticated === false) {
       navigate("/Login");
     }
-    // if (loading === false && user.role === "admin") {
-    //   navigate("/admin");
-    // };
   }, [isAuntheticated, navigate]);
 
   function logoutUser() {
@@ -40,7 +37,7 @@ const UserProfile = () => {
       ) : (
         <>
           <Metadata title={`${user.name}'s Profile`} />
-          <div className="container">
+          <div className="profileContainer">
             <h2 id="userHeading"> Hello {user.name} </h2>
             <div className="card profileCard text-center">
               <div className="card-header">Account Details</div>
