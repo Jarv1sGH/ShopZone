@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import ImageGallery from "react-image-gallery";
