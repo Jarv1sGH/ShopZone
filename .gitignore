@@ -8,8 +8,6 @@
 # testing
 /frontend/coverage
 
-# Production build
-/frontend/build
 # misc
 /backend/config/config.env
 /frontend/.DS_Store
