@@ -47,10 +47,10 @@ const TrendingProduct = (props) => {
   };
 
   const renderItem1 = (item) => {
-    return <img src={item.original} onClick={handleClick1} />;
+    return <img src={item.original} onClick={handleClick1} alt="" />;
   };
   const renderItem2 = (item) => {
-    return <img src={item.original} onClick={handleClick2} />;
+    return <img src={item.original} onClick={handleClick2} alt=""/>;
   };
   return (
     <div className="trendingItemOuter">

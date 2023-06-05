@@ -24,9 +24,8 @@ const ProductCard = ({ product }) => {
 
         <div className="productInfo">
           <p>{product.name}</p>
-          {/* <p>{product.name.slice(0,40)}{product.name.length > 40 ? "..." : ""}</p> */}
+          {/* <p>{product.name.slice(0,27)}{product.name.length >  ? "..." : ""}</p> */}
           <span id="price">{`₹ ${product.price}`}</span>
-         
         </div>
       </div>
     </Link>
